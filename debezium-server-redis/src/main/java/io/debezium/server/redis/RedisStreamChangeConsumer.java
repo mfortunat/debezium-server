@@ -95,8 +95,8 @@ public class RedisStreamChangeConsumer extends BaseChangeConsumer
             };
         }
 
-        RedisConnection redisConnection = new RedisConnection(config.getAddress(), config.getUser(), config.getPassword(), config.getConnectionTimeout(),
-                config.getSocketTimeout(), config.isSslEnabled(), config.getDbIndex());
+        RedisConnection redisConnection = new RedisConnection(config.getAddress(), config.getUser(), config.getPassword(), config.getDbIndex(),
+                config.getConnectionTimeout(), config.getSocketTimeout(), config.isSslEnabled());
         client = redisConnection.getRedisClient(DEBEZIUM_REDIS_SINK_CLIENT_NAME, config.isWaitEnabled(), config.getWaitTimeout(), config.isWaitRetryEnabled(),
                 config.getWaitRetryDelay());
 
